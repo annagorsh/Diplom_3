@@ -38,6 +38,21 @@ class LoginPageLocators:
     #Кнопка "Восстановить пароль"
     FORGOT_PASSWORD_BUTTON = By.XPATH, "//a[contains(.,'Восстановить пароль')]"
 
+    #Поле "Email" в неактивном состоянии
+    EMAIL_FIELD_INACTIVE = By.XPATH, "(//div[contains(.,'Email')])[5]"
+
+    #Поле Email в активном состоянии
+    EMAIL_FIELD_ACTIVE = By.XPATH, "(//input[@class='text input__textfield text_type_main-default'])[1]"
+
+    #Поле "Пароль" в неактивном состоянии
+    PASSWORD_FIELD_INACTIVE = By.XPATH, "//label[contains(.,'Пароль')]"
+
+    #Поле "Пароль" в активном состоянии
+    PASSWORD_FIELD_ACTIVE = By.XPATH, "//input[contains(@name,'Пароль')]"
+
+    #Кнопка "Войти"
+    LOGIN_BUTTON = By.XPATH, "//button[contains(.,'Войти')]"
+
 #Главная страница
 class MainPageLocators:
 
@@ -47,6 +62,9 @@ class MainPageLocators:
     #Кнопка "Лента заказов"
     GO_TO_ORDER_FEED_BUTTON = By.XPATH, "//p[contains(.,'Лента Заказов')]"
 
+    #Кнопка "Оформить заказ"
+    ORDER_BUTTON = By.XPATH, "//button[contains(.,'Оформить заказ')]"
+
 #Личный кабинет
 class ProfileLocators:
 
@@ -55,6 +73,9 @@ class ProfileLocators:
 
     #Кнопка "Выход"
     LOGOUT_BUTTON = By.XPATH, "//button[@type='button'][contains(.,'Выход')]"
+
+    #Надпись о ПД
+    PERSONAL_DATA_INFORMER = By.XPATH, "//p[contains(.,'персональные данные')]"
 
 #Страница ленты заказов
 class OrderFeedLocators:
