@@ -20,6 +20,7 @@ class TestResetPassword:
     def test_enter_email_and_go_to_reset_password(self, driver):
         forgot_page = ForgotPasswordPage(driver)
         forgot_page.navigate(FORGOT_PASSWORD_URL)
+        forgot_page.wait_for_email_field_to_be_clickable()
         forgot_page.click_email_field()
         forgot_page.fill_in_email_field()
         forgot_page.click_reset_button()

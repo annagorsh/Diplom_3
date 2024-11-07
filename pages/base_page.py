@@ -34,3 +34,7 @@ class BasePage:
     @allure.step("Ждём, пока элемент станет видимым")
     def wait_for_element_visible(self, locator, timeout = 30):
         return WebDriverWait(self.driver, timeout).until(EC.visibility_of_element_located(locator))
+
+    @allure.step("Ждём, пока элемент станет кликабельным")
+    def wait_for_element_clickable(self, locator, timeout = 999):
+        return WebDriverWait(self.driver, timeout).until(EC.element_to_be_clickable(locator))
