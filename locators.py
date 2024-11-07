@@ -23,17 +23,14 @@ class ResetPasswordLocators:
     NEW_PASSWORD_FIELD = By.XPATH, "//label[contains(.,'Пароль')]"
 
     #Иконка видимости пароля в виде глаза - открытый глаз, пароль закрыт точками
-    VIEW_PASSWORD_BUTTON = By.CSS_SELECTOR, ".input__icon > svg: nth - child(1)"
+    VIEW_PASSWORD_BUTTON = By.XPATH, '//div[@class="input__icon input__icon-action"]'
 
     #Поле ввода кода из письма
     EMAIL_CODE_FIELD = By.XPATH, "//label[contains(.,'Введите код из письма')]"
 
-    #Поле "Пароль" - дефолтное состояние
-    pass
-    #Поле "Пароль" - активное состояние
-    pass
-    #скрытие пароля - можно завязаться на type = text и type = password в поле ввода
-    #активность поля - можно завязаться на input_status_default и input_status_active
+    #Поле "Пароль" с типом изменившимся на text
+    PASSWORD_FIELD2 = By.XPATH, "//input[contains(@type,'text')]"
+
 
 #Страница логина
 class LoginPageLocators:

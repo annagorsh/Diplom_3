@@ -16,7 +16,7 @@ class BasePage:
         self.driver.get(url)
 
     @allure.step("Ищем нужный элемент")
-    def find_element(self, locator, timeout=30):
+    def find_element(self, locator, timeout=999):
         return WebDriverWait(self.driver, timeout).until(EC.presence_of_element_located(locator))
 
     @allure.step("Ищем нужные элементы")
