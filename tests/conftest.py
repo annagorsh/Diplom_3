@@ -2,11 +2,13 @@ import string
 import random
 from random import randint
 import pytest
+import requests
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.firefox import GeckoDriverManager
 from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.firefox.service import Service as FirefoxService
+from links import *
 
 
 @pytest.fixture(params=["chrome", "firefox"])
