@@ -4,10 +4,17 @@ from selenium.webdriver.common.by import By
 class ForgotPasswordLocators:
 
     #поле "Email"
-    EMAIL_FIELD = By.XPATH, "(//div[contains(.,'Email')])[5]"
+    #EMAIL_FIELD = By.XPATH, "(//div[contains(.,'Email')])[5]"
+    EMAIL_FIELD = By.CSS_SELECTOR, ".input"
+
+    #Поле Email в активном состоянии
+    EMAIL_FIELD_ACTIVE = By.XPATH, "//input[@class='text input__textfield text_type_main-default']"
 
     #Кнопка "Восстановить"
     RESET_PASSWORD_BUTTON = By.XPATH, "//button[contains(.,'Восстановить')]"
+
+    #Надпись "Вспомнили пароль?"
+    REMEMBER_PASSWORD_BUTTON = By.XPATH, "//p[contains(.,'Вспомнили пароль? Войти')]"
 
 #Страница восстановления пароля с полем для ввода нового
 class ResetPasswordLocators:
@@ -17,6 +24,9 @@ class ResetPasswordLocators:
 
     #Иконка видимости пароля в виде глаза - открытый глаз, пароль закрыт точками
     VIEW_PASSWORD_BUTTON = By.CSS_SELECTOR, ".input__icon > svg: nth - child(1)"
+
+    #Поле ввода кода из письма
+    EMAIL_CODE_FIELD = By.XPATH, "//label[contains(.,'Введите код из письма')]"
 
     #Поле "Пароль" - дефолтное состояние
     pass
