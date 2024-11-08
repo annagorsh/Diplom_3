@@ -74,7 +74,6 @@ class MainPageLocators:
     #Каунтер Флюоресцентной булки
     FLUO_BUN_COUNTER = By.XPATH, "//p[@class='counter_counter__num__3nue1' and text()='2']"
 
-
 #Личный кабинет
 class ProfileLocators:
 
@@ -103,7 +102,11 @@ class IngredientPopupLocators:
     POPUP_CLOSE_BUTTON = By.XPATH, "(//button[contains(@type,'button')])[1]"
 
 
+#Попап с номером заказа
+class OrderPopupLocators:
 
+    #Текст в попапе
+    POPUP_TEXT = By.XPATH, "//p[contains(.,'идентификатор заказа')]"
 
 
 

@@ -50,3 +50,7 @@ class MainPage(BasePage):
     def wait_for_counter_visible(self):
         self.wait_for_element_visible(MainPageLocators.FLUO_BUN_COUNTER)
 
+    @allure.step("Нажимаем на кнопку 'Оформить заказ'")
+    def click_order_button(self):
+        self.click_element(MainPageLocators.ORDER_BUTTON)
+

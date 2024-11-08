@@ -1,8 +1,12 @@
+import requests
+
 from links import *
-from locators import IngredientPopupLocators, MainPageLocators
+from locators import IngredientPopupLocators, MainPageLocators, OrderPopupLocators
 from pages.ingredient_popup_page import IngredientPopupPage
+from pages.login_page import LoginPage
 from pages.main_page import MainPage
 from pages.order_feed_page import *
+from pages.order_popup_page import OrderPopupPage
 
 
 class TestMainFunctions:
@@ -47,3 +51,28 @@ class TestMainFunctions:
         main.ingredient_drag_and_drop()
         main.wait_for_counter_visible()
         assert driver.find_element(*MainPageLocators.FLUO_BUN_COUNTER).is_displayed()
+
+    @allure.title("Проверяем флоу оформления заказа авторизованным пользователем")
+    def test_authorized_order_flow(self, driver, payload):
+        response = requests.post(CREATE_USER_URL, data=payload)
+        assert response.status_code == 200
+        email = payload.get("email")
+        password = payload.get("password")
+        login_page = LoginPage(driver)
+        login_page.navigate(LOGIN_URL)
+        login_page.fill_in_email(email)
+        login_page.fill_in_password(password)
+        login_page.click_login_button()
+        main_page = MainPage(driver)
+        main_page.wait_order_button_visible()
+        expected_url = MAIN_URL
+        assert driver.current_url == expected_url
+        main_page.ingredient_drag_and_drop()
+        main_page.wait_for_counter_visible()
+        main_page.click_order_button()
+        popup = OrderPopupPage(driver)
+        popup.wait_until_popup_text_visible()
+        assert driver.find_element(*OrderPopupLocators.POPUP_TEXT).is_displayed()
+        token = response.json().get("accessToken")
+        delete_response = requests.delete(AUTH_USER_URL, headers={"Authorization": token})
+        assert delete_response.status_code == 202

@@ -5,10 +5,6 @@ from pages.base_page import *
 
 class ForgotPasswordPage(BasePage):
 
-    @allure.step("Инициализируем браузер")
-    def __init__(self, driver):
-        super().__init__(driver)
-
     @allure.step("Ожидаем видимости надписи 'Вспомнили пароль?'")
     def wait_for_remember_password_visible(self):
         self.wait_for_element_visible(ForgotPasswordLocators.REMEMBER_PASSWORD_BUTTON)
