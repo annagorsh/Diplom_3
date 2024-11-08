@@ -1,3 +1,4 @@
+from selenium.webdriver import ActionChains
 from selenium.webdriver.firefox.webdriver import WebDriver
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -46,3 +47,8 @@ class BasePage:
     @allure.step("Ожидаем изменения URL на нужный")
     def wait_for_url_change(self, expected_url, timeout=999):
             return WebDriverWait(self.driver, timeout).until(EC.url_to_be(expected_url))
+
+    @allure.step("Перетаскиваем элемент")
+    def drag_and_drop(self, source_element, target_element):
+        actions = ActionChains(self.driver)
+        actions.drag_and_drop(source_element, target_element).perform()

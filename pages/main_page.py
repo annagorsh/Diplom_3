@@ -30,3 +30,23 @@ class MainPage(BasePage):
     @allure.step("Ожидаем видимости карточки ингредиента с булкой")
     def wait_for_bun(self):
         self.wait_for_element_clickable(MainPageLocators.FLUO_BUN)
+
+    def get_source_element(self):
+        self.wait_for_element_clickable(MainPageLocators.FLUO_BUN)
+        return self.driver.find_element(*MainPageLocators.FLUO_BUN)
+
+    def get_target_element(self):
+        self.wait_for_element_visible(MainPageLocators.INGREDIENT_PLACE)
+        return self.driver.find_element(*MainPageLocators.INGREDIENT_PLACE)
+
+    @allure.step("Перетаскиваем ингредиент в список ингредиентов")
+    def ingredient_drag_and_drop(self):
+        source_element = self.get_source_element()
+        target_element = self.get_target_element()
+
+        self.drag_and_drop(source_element, target_element)
+
+    @allure.step("Ожидаем видимости каунтера")
+    def wait_for_counter_visible(self):
+        self.wait_for_element_visible(MainPageLocators.FLUO_BUN_COUNTER)
+

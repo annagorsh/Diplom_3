@@ -1,5 +1,5 @@
 from links import *
-from locators import IngredientPopupLocators
+from locators import IngredientPopupLocators, MainPageLocators
 from pages.ingredient_popup_page import IngredientPopupPage
 from pages.main_page import MainPage
 from pages.order_feed_page import *
@@ -39,3 +39,11 @@ class TestMainFunctions:
         popup.close_popup()
         popup.wait_until_popup_invisible()
         assert not driver.find_element(*IngredientPopupLocators.INGREDIENT_HEADER).is_displayed()
+
+    @allure.title("Проверяем добавление ингредиента в заказ и изменение у него каунтера")
+    def test_add_ingredient(self, driver):
+        main = MainPage(driver)
+        main.navigate(MAIN_URL)
+        main.ingredient_drag_and_drop()
+        main.wait_for_counter_visible()
+        assert driver.find_element(*MainPageLocators.FLUO_BUN_COUNTER).is_displayed()

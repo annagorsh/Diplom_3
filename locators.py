@@ -68,6 +68,13 @@ class MainPageLocators:
     #Ингредиент Флюоресцентная булка
     FLUO_BUN = By.XPATH, "(//p[contains(.,'Флюоресцентная булка R2-D3')])"
 
+    #Место для перетаскивания ингредиента
+    INGREDIENT_PLACE = By.XPATH, "//div[@class='constructor-element constructor-element_pos_top']"
+
+    #Каунтер Флюоресцентной булки
+    FLUO_BUN_COUNTER = By.XPATH, "//p[@class='counter_counter__num__3nue1' and text()='2']"
+
+
 #Личный кабинет
 class ProfileLocators:
 
