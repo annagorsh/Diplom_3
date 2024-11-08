@@ -65,6 +65,9 @@ class MainPageLocators:
     #Кнопка "Оформить заказ"
     ORDER_BUTTON = By.XPATH, "//button[contains(.,'Оформить заказ')]"
 
+    #Ингредиент Флюоресцентная булка
+    FLUO_BUN = By.XPATH, "(//p[contains(.,'Флюоресцентная булка R2-D3')])"
+
 #Личный кабинет
 class ProfileLocators:
 
@@ -82,6 +85,16 @@ class OrderFeedLocators:
 
     #Кнопка в хедере для перехода в раздел "Конструктор"
     GO_TO_CONSTRUCTOR_BUTTON = By.XPATH, "//p[contains(.,'Конструктор')]"
+
+#Попап с деталями ингредиента
+class IngredientPopupLocators:
+
+    #Заголовок попапа
+    INGREDIENT_HEADER = By.XPATH, "//h2[contains(.,'Детали ингредиента')]"
+
+    #Иконка "Крестик"
+    POPUP_CLOSE_BUTTON = By.XPATH, "(//button[contains(@type,'button')])[1]"
+
 
 
 

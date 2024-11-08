@@ -1,4 +1,5 @@
 from links import *
+from pages.ingredient_popup_page import IngredientPopupPage
 from pages.main_page import MainPage
 from pages.order_feed_page import *
 
@@ -24,3 +25,15 @@ class TestMainFunctions:
         order_feed.wait_for_order_feed_url()
         expected_url = ORDER_FEED_URL
         assert driver.current_url == expected_url
+
+    @allure.title("Проверяем открытие и закрытие попапа с информацией об ингредиенте")
+    def test_open_ingredient_info(self, driver):
+        main = MainPage(driver)
+        main.navigate(MAIN_URL)
+        main.wait_for_bun()
+        main.click_bun()
+        popup = IngredientPopupPage(driver)
+        popup.wait_until_popup_header_visible()
+        assert "ingredient" in driver.current_url
+        popup.close_popup()
+        popup.wait_until_popup_invisible()

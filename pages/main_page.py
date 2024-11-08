@@ -22,3 +22,11 @@ class MainPage(BasePage):
     @allure.step("Кликаем на кнопку 'Лента заказов' в хедере сайта")
     def click_order_feed_button(self):
         self.click_element(MainPageLocators.GO_TO_ORDER_FEED_BUTTON)
+
+    @allure.step("Кликаем на ингредиент(Флюоресцентная булка) на главной странице")
+    def click_bun(self):
+        self.click_element(MainPageLocators.FLUO_BUN)
+
+    @allure.step("Ожидаем видимости карточки ингредиента с булкой")
+    def wait_for_bun(self):
+        self.wait_for_element_clickable(MainPageLocators.FLUO_BUN)
