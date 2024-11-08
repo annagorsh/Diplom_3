@@ -1,4 +1,5 @@
 from links import *
+from locators import IngredientPopupLocators
 from pages.ingredient_popup_page import IngredientPopupPage
 from pages.main_page import MainPage
 from pages.order_feed_page import *
@@ -37,3 +38,4 @@ class TestMainFunctions:
         assert "ingredient" in driver.current_url
         popup.close_popup()
         popup.wait_until_popup_invisible()
+        assert not driver.find_element(*IngredientPopupLocators.INGREDIENT_HEADER).is_displayed()
