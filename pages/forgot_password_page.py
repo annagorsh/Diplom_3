@@ -1,6 +1,4 @@
 import faker
-
-import helpers
 from pages.base_page import *
 
 class ForgotPasswordPage(BasePage):
