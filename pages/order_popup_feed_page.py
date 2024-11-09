@@ -1,8 +1,6 @@
 import allure
-
 from locators import OrderPopupFeedLocators
 from pages.base_page import BasePage
-
 
 class OrderPopupFeedPage(BasePage):
 

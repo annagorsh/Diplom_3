@@ -1,8 +1,6 @@
 import allure
-
 from locators import OrderCreatedLocators
 from pages.base_page import BasePage
-
 
 class OrderCreatedPage(BasePage):
 

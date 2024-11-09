@@ -1,4 +1,6 @@
 import faker
+
+from locators import ForgotPasswordLocators
 from pages.base_page import *
 
 class ForgotPasswordPage(BasePage):

@@ -6,7 +6,6 @@ from pages.main_page import MainPage
 from pages.order_history_page import OrderHistoryPage
 from pages.profile_page import ProfilePage
 
-
 class TestProfile:
 
     @allure.title("Проверяем переход с главной страницы в личный кабинет для авторизованного пользователя")

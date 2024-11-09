@@ -1,8 +1,5 @@
-import time
-
 import allure
 import requests
-
 from links import *
 from locators import OrderPopupFeedLocators, OrderFeedLocators, OrderCreatedLocators
 from pages.login_page import LoginPage

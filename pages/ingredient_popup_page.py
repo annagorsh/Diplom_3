@@ -1,5 +1,4 @@
 import allure
-
 from locators import IngredientPopupLocators
 from pages.base_page import BasePage
 

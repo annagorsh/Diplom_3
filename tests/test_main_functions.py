@@ -1,5 +1,4 @@
 import requests
-
 from links import *
 from locators import IngredientPopupLocators, MainPageLocators, OrderCreatedLocators
 from pages.ingredient_popup_page import IngredientPopupPage

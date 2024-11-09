@@ -1,5 +1,4 @@
 import allure
-
 from locators import ResetPasswordLocators
 from pages.base_page import BasePage
 

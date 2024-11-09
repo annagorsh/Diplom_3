@@ -2,10 +2,7 @@ from selenium.webdriver import ActionChains
 from selenium.webdriver.firefox.webdriver import WebDriver
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium import webdriver
-from locators import *
 import allure
-from selenium.common import NoSuchElementException
 
 class BasePage:
     @allure.step("Инициализируем браузер")

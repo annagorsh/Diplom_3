@@ -1,10 +1,7 @@
-import time
-
 from links import *
 from pages.login_page import *
 from pages.forgot_password_page import *
 from pages.reset_password_page import *
-import pytest
 
 class TestResetPassword:
 

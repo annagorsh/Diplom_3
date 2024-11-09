@@ -1,5 +1,4 @@
 import allure
-
 from links import ORDER_HISTORY_URL
 from locators import OrderHistoryLocators
 from pages.base_page import BasePage

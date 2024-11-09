@@ -8,7 +8,6 @@ class LoginPage(BasePage):
     def click_reset_password(self):
         self.click_element(LoginPageLocators.FORGOT_PASSWORD_BUTTON)
 
-
     @allure.step("Заполняем поле Email")
     def fill_in_email(self, text):
         self.wait_for_element_clickable(LoginPageLocators.EMAIL_FIELD_INACTIVE)

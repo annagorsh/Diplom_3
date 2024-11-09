@@ -1,5 +1,4 @@
 import allure
-
 from links import ORDER_FEED_URL
 from locators import OrderFeedLocators
 from pages.base_page import BasePage

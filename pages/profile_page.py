@@ -1,5 +1,4 @@
 import allure
-
 from links import LOGIN_URL
 from locators import ProfileLocators
 from pages.base_page import BasePage
