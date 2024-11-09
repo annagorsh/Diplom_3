@@ -21,6 +21,7 @@ def driver(request):
         browser = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()))
     else:
         ValueError("Can't create instance for this browser param")
+    browser.maximize_window()
     yield browser
 
     browser.quit()

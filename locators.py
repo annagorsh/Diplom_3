@@ -92,6 +92,27 @@ class OrderFeedLocators:
     #Кнопка в хедере для перехода в раздел "Конструктор"
     GO_TO_CONSTRUCTOR_BUTTON = By.XPATH, "//p[contains(.,'Конструктор')]"
 
+    #Заголовок страницы
+    FEED_HEADER = By.XPATH, "//h1[contains(.,'Лента заказов')]"
+
+    #Первый зааказ в списке
+    FIRST_ORDER = By.XPATH, "(//h2[contains(@class,'main-medium mb-2')])[1]"
+
+    #Конкретный заказ
+    SPECIFIC_ORDER_LOCATOR = By.XPATH, "//p[@class='text text_type_digits-default'][contains(.,'#{}')]"
+
+    #Общее количество заказов
+    TOTAL = By.XPATH, "(// p[contains( @class ,'digits-large')])[1]"
+
+    #Количество заказов за текущий день
+    TODAYS_TOTAL = By.XPATH, "(//p[contains(@class,'digits-large')])[2]"
+
+#Попап заказа в Ленте
+class OrderPopupFeedLocators:
+
+    #Заголовок "Состав" в попапе
+    CONTENTS_HEADER = By.XPATH, "//p[contains(.,'Cостав')]"
+
 #Попап с деталями ингредиента
 class IngredientPopupLocators:
 
@@ -103,10 +124,31 @@ class IngredientPopupLocators:
 
 
 #Попап с номером заказа
-class OrderPopupLocators:
+class OrderCreatedLocators:
 
     #Текст в попапе
     POPUP_TEXT = By.XPATH, "//p[contains(.,'идентификатор заказа')]"
+
+    #Кнопка Крестик
+    CLOSE_BUTTON = By.XPATH, "//button[contains(@type,'button')]"
+
+    #Неправильный номер
+    INCORRECT_NUMBER = By.XPATH, "//h2[contains(.,'9999')]"
+
+    #Номер только что созданного заказа
+    JUST_CREATED_ORDER = By.XPATH, "//h2[contains(@class,'digits-large mb-8')]"
+
+    #Локатор для ожидания
+    WAITING_FOR = By.XPATH, "//li[@class='text text_type_digits-default mb-2'][contains(.,'{}')]"
+
+#История заказов в профиле
+class OrderHistoryLocators:
+
+    #Номер заказа пользователя
+    ORDER_NUMBER = By.XPATH, "//p[@class='text text_type_digits-default'][contains(.,'#')]"
+
+
+
 
 
 

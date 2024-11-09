@@ -1,12 +1,12 @@
 import requests
 
 from links import *
-from locators import IngredientPopupLocators, MainPageLocators, OrderPopupLocators
+from locators import IngredientPopupLocators, MainPageLocators, OrderCreatedLocators
 from pages.ingredient_popup_page import IngredientPopupPage
 from pages.login_page import LoginPage
 from pages.main_page import MainPage
 from pages.order_feed_page import *
-from pages.order_popup_page import OrderPopupPage
+from pages.order_created_popup_page import OrderCreatedPage
 
 
 class TestMainFunctions:
@@ -70,9 +70,9 @@ class TestMainFunctions:
         main_page.ingredient_drag_and_drop()
         main_page.wait_for_counter_visible()
         main_page.click_order_button()
-        popup = OrderPopupPage(driver)
+        popup = OrderCreatedPage(driver)
         popup.wait_until_popup_text_visible()
-        assert driver.find_element(*OrderPopupLocators.POPUP_TEXT).is_displayed()
+        assert driver.find_element(*OrderCreatedLocators.POPUP_TEXT).is_displayed()
         token = response.json().get("accessToken")
         delete_response = requests.delete(AUTH_USER_URL, headers={"Authorization": token})
         assert delete_response.status_code == 202
